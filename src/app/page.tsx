@@ -32,7 +32,7 @@ export default function Home() {
 
     return (
         <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
-            <h1>Next.js + Backend API Example (TypeScript)</h1>
+            <h1>This is My Website Anna lul</h1>
             {loading ? (
                 <p>Loading...</p>
             ) : error ? (
