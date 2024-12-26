@@ -2,7 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: rgba(43,45,48,0.83);
-    color: antiquewhite;
+@layer base {
+    :root {
+        --color-primary: hsl(0, 0%, 0%);
+        --color-secondary: hsl(0, 0%, 50%);
+        --color-text-base: hsl(0, 0%, 100%);
+        --color-bg-primary: hsl(0, 0%, 100%);
+    }
+}
+
+.theme-black {
+    --color-primary: hsl(0, 0%, 0%);
+    --color-secondary: hsl(0, 0%, 50%);
+}
+
+.theme-purple {
+    --color-primary: hsl(270, 100%, 50%);
+    --color-secondary: hsl(270, 100%, 75%);
+}
+
+.theme-blue {
+    --color-primary: hsl(220, 100%, 50%);
+    --color-secondary: hsl(220, 100%, 75%);
 }
