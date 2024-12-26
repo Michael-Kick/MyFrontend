@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import './ui/globals.css'
+import Navbar from "./_components/Navbar";
+import './_ui/globals.css'
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
