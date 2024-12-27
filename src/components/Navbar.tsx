@@ -18,7 +18,7 @@ const navLinks = [
 
 const Navbar = () => {
     return (
-        <nav>
+        <nav >
             <div>
                 <ul>
                     {navLinks.map((link, index) => (
