@@ -1,17 +1,17 @@
 import React from "react";
-import Navbar from "./_components/Navbar";
 import './_ui/globals.css'
+import Navbar from "./_components/Navbar";
 
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({children}: { children: React.ReactNode }) {
 
     return (
         <html lang="en">
-        <body className="bg-bkgPrimary text-textBase " >
-        <Navbar/>
+        <body className="bg-background text-text flex flex-col min-h-screen">
         {/* Layout UI */}
         {/* Place children where you want to render a page or nested layout */}
-        <main>{children}</main>
+        <Navbar/>
+        <main className="flex-grow">{children}</main>
         </body>
         </html>
     );

@@ -1,18 +1,17 @@
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 interface NavLinkProps {
     href: string;
-    title: string;
+    label: string;
 }
 
-const NavLink = ({href, title}: NavLinkProps) => {
+function NavLink({ href, label }: NavLinkProps) {
     return (
-        <Link
-            href={href}
-        >
-            {title}
+        <Link href={href} className="text-text hover:text-primary">
+            {label}
         </Link>
     );
-};
+}
 
 export default NavLink;

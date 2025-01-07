@@ -4,45 +4,51 @@
 
 @layer base {
     :root {
-        --color-primary: hsl(0, 0%, 0%);
+        --color-primary: hsl(220, 100%, 50%);
         --color-secondary: hsl(0, 0%, 50%);
-        --color-bg-primary: hsl(0, 0%, 100%);
-        --color-text-base: hsl(0, 0%, 100%);
+        --color-danger: hsl(0, 100%, 50%);
+        --color-background: hsl(0, 0%, 100%);
+        --color-text-base: hsl(0, 0%, 0%);
     }
     @media (prefers-color-scheme: dark) {
         :root {
-            --color-primary: hsl(0, 0%, 0%);
+            --color-primary: hsl(220, 100%, 50%);
             --color-secondary: hsl(0, 0%, 50%);
-            --color-bg-primary: hsl(213, 24%, 7%);
+            --color-danger: hsl(0, 100%, 50%);
+            --color-background: hsl(213, 24%, 7%);
             --color-text-base: hsl(0, 0%, 100%);
         }
     }
 
     :root[data-theme='light']{
-        --color-primary: hsl(0, 0%, 0%);
+        --color-primary: hsl(220, 100%, 50%);
         --color-secondary: hsl(0, 0%, 50%);
-        --color-bg-primary: hsl(0, 0%, 100%);
+        --color-danger: hsl(0, 100%, 50%);
+        --color-background: hsl(0, 0%, 100%);
         --color-text-base: hsl(0, 0%, 0%);
     }
 
     :root[data-theme='dark']{
-        --color-primary: hsl(0, 0%, 0%);
+        --color-primary: hsl(220, 100%, 50%);
         --color-secondary: hsl(0, 0%, 50%);
-        --color-bg-primary: hsl(0, 0%, 0%);
+        --color-danger: hsl(0, 100%, 50%);
+        --color-background: hsl(0, 0%, 0%);
         --color-text-base: hsl(0, 0%, 100%);
     }
 
     :root[data-theme='purple']{
         --color-primary: hsl(270, 100%, 50%);
         --color-secondary: hsl(270, 100%, 75%);
-        --color-bg-primary: hsl(0, 0%, 15%);
+        --color-danger: hsl(0, 100%, 50%);
+        --color-background: hsl(0, 0%, 15%);
         --color-text-base: hsl(0, 0%, 75%);
     }
 
     :root[data-theme='blue']{
         --color-primary: hsl(220, 100%, 50%);
         --color-secondary: hsl(220, 100%, 75%);
-        --color-bg-primary: hsl(0, 0%, 15%);
+        --color-danger: hsl(0, 100%, 50%);
+        --color-background: hsl(0, 0%, 15%);
         --color-text-base: hsl(0, 0%, 75%);
     }
 }
