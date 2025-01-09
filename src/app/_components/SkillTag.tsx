@@ -1,15 +1,9 @@
 "use client";
-import React, {useEffect, useState} from 'react';
-import {FaHtml5, FaVuejs, FaReact, FaPython, FaJava} from "react-icons/fa";
+import React from 'react';
+import { FaVuejs, FaReact, FaPython, FaJava} from "react-icons/fa";
 import {TbBrandCSharp, TbBrandXamarin} from "react-icons/tb";
 import {BsFiletypeSql} from "react-icons/bs";
 import {BiLogoTypescript} from "react-icons/bi";
-
-
-interface SkillMapping {
-    name: string;
-    icon: React.ReactNode;
-}
 
 type SkillTagProps = {
     skillKey: number;
