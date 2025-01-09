@@ -4,8 +4,8 @@ const Navbar = () => {
     // Links für die Navigation
     const navLinks = [
         { href: "/", label: "Home" },
+        { href: "/projects", label: "Projects" },
         { href: "/about", label: "About" },
-        { href: "/resume", label: "Resume" },
         { href: "/settings", label: "Settings" },
     ];
 
