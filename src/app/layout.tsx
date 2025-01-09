@@ -1,6 +1,7 @@
 import React from "react";
 import './_ui/globals.css'
 import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
@@ -12,6 +13,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         {/* Place children where you want to render a page or nested layout */}
         <Navbar/>
         <main className="flex-grow">{children}</main>
+        <Footer/>
         </body>
         </html>
     );

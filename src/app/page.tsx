@@ -1,13 +1,10 @@
 
 import React from "react";
 
-// rsf
+// rsc
 export default function Home() {
     return (
         <main>
-
-
-
         </main>
     )
 }

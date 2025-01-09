@@ -11,7 +11,7 @@ module.exports = {
         danger: 'var(--color-danger)',
         background: 'var(--color-background)',
         text: 'var(--color-text-base)',
-
+        contrast: 'var(--color-contrast)',
       }
     },
   },
