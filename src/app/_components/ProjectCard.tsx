@@ -1,16 +1,31 @@
 import React from 'react';
 import SkillTag from "./SkillTag";
 
-const ProjectCard = () => {
-    console.log("(1)")
-    const projSkills: number[] = [1,2,3,4,5,6,7,8]
+interface ProjectCardProps {
+    project: ProjectObject
+}
+
+interface ProjectObject {
+    projectName : string,
+    companyName : string,
+    companyLogo : string,
+    description : string,
+    projectSkills : number[]
+}
+
+
+const ProjectCard = (props:ProjectCardProps) => {
+
+    console.log(props.project)
+
     return (
         <div>
-            <h3> Project Name</h3>
-            <div>COMPANY ICON</div>
-            <div>Company name and Department</div>
+            <h3>{props.project.projectName}</h3>
+            <div>{props.project.companyName}</div>
+            <div>{props.project.companyLogo}</div>
+            <div>{props.project.description}</div>
             <div>
-                {projSkills.map((skillNum: number) =>
+                {props.project.projectSkills.map((skillNum: number) =>
                     <SkillTag skillKey={skillNum}/>
                 )}
             </div>

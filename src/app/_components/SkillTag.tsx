@@ -13,7 +13,7 @@ const mySkills = [
     {key: 2, name: 'TypeScript', icon: <BiLogoTypescript/>, textColor:'#ffffff', backgroundColor:'#2d79c7'},
     {key: 3, name: 'SQL', icon: <BsFiletypeSql/>, textColor:'#ffffff', backgroundColor:'#087993'},
     {key: 4, name: 'React.js', icon: <FaReact/>, textColor:'#00d8ff', backgroundColor:'#222222'},
-    {key: 5, name: 'Python', icon: <FaPython/>, textColor:'#ffffff', backgroundColor:'#646464'},
+    {key: 5, name: 'Python', icon: <FaPython/>, textColor:'#f7cd38', backgroundColor:'#646464'},
     {key: 6, name: 'C-Sharp', icon: <TbBrandCSharp/>, textColor:'#ffffff', backgroundColor:'#690081'},
     {key: 7, name: 'Java', icon: <FaJava/>, textColor:'#f58620', backgroundColor:'#547c99'},
     {key: 8, name: 'Xamarin.Forms', icon: <TbBrandXamarin/>, textColor:'#ffffff', backgroundColor:'#3a9bdc'},
