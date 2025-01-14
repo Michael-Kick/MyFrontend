@@ -16,10 +16,8 @@ interface ProjectObject {
 
 const ProjectCard = (props:ProjectCardProps) => {
 
-    console.log(props.project)
-
     return (
-        <div>
+        <div className="relative flex flex-col my-6 bg-gray-600 shadow-sm border border-slate-200 rounded-lg w-96">
             <h3>{props.project.projectName}</h3>
             <div>{props.project.companyName}</div>
             <div>{props.project.companyLogo}</div>

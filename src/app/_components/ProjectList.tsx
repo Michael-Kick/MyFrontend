@@ -12,11 +12,11 @@ const projects = [
         projectSkills : [1,2]
     },
     {
-        projectName : 'Milage 2+ Design Revision',
-        companyName : 'Universidade do Algarve',
+        projectName : 'Cockpittool Mobile',
+        companyName : 'Siemens AG Amberg',
         companyLogo : '',
-        description : 'Erstellen der Lernapp dies und das',
-        projectSkills : [1,2]
+        description : 'Do stuff for project managers',
+        projectSkills : [8,6]
     }
 ]
 
