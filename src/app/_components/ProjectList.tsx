@@ -25,8 +25,8 @@ function ProjectList() {
 
     return (
         <div>
-            {projects.map((project,key) =>
-                <ProjectCard project={project}/>)}
+            {projects.map((project,id) =>
+                <ProjectCard key={id} project={project}/>)}
         </div>
     );
 }
