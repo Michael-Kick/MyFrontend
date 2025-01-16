@@ -5,6 +5,7 @@ const Navbar = () => {
     const navLinks = [
         { href: "/", label: "Home" },
         { href: "/projects", label: "Projects" },
+        { href: "/resume", label: "Resume" },
         { href: "/about", label: "About" },
         { href: "/settings", label: "Settings" },
     ];
@@ -16,7 +17,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <NavLink href="/" label="MyBrand" />
+                        <NavLink href="/public" label="MyBrand" />
                     </div>
 
                     {/* Desktop Menu */}

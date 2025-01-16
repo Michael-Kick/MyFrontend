@@ -10,6 +10,7 @@
         --color-background: hsl(0, 0%, 100%);
         --color-text-base: hsl(0, 0%, 0%);
         --color-contrast: hsl(220,13%,91%);
+        --color-contrastDark: hsl(220, 46%, 27%);
     }
     @media (prefers-color-scheme: dark) {
         :root {
@@ -19,6 +20,7 @@
             --color-background: hsl(213, 24%, 7%);
             --color-text-base: hsl(0, 0%, 100%);
             --color-contrast: hsl(220,13%,91%);
+            --color-contrastDark: hsl(220, 46%, 27%);
         }
     }
 
@@ -29,6 +31,7 @@
         --color-background: hsl(0, 0%, 100%);
         --color-text-base: hsl(0, 0%, 0%);
         --color-contrast: hsl(220,13%,91%);
+        --color-contrastDark: hsl(220, 46%, 27%);
     }
 
     :root[data-theme='dark']{
@@ -38,6 +41,7 @@
         --color-background: hsl(0, 0%, 0%);
         --color-text-base: hsl(0, 0%, 100%);
         --color-contrast: hsl(220,13%,91%);
+        --color-contrastDark: hsl(220, 46%, 27%);
     }
 
     :root[data-theme='purple']{
@@ -47,6 +51,7 @@
         --color-background: hsl(0, 0%, 15%);
         --color-text-base: hsl(0, 0%, 75%);
         --color-contrast: hsl(220,13%,91%);
+        --color-contrastDark: hsl(220, 46%, 27%);
     }
 
     :root[data-theme='blue']{
@@ -56,5 +61,6 @@
         --color-background: hsl(0, 0%, 15%);
         --color-text-base: hsl(0, 0%, 75%);
         --color-contrast: hsl(220,13%,91%);
+        --color-contrastDark: hsl(220, 46%, 27%);
     }
 }

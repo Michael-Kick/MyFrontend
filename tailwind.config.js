@@ -12,6 +12,7 @@ module.exports = {
         background: 'var(--color-background)',
         text: 'var(--color-text-base)',
         contrast: 'var(--color-contrast)',
+        contrastDark: 'var(--color-contrastDark)',
       }
     },
   },
