@@ -2,11 +2,11 @@ import React from 'react';
 import SkillTag from "../projects/SkillTag";
 
 
-interface ResumeElementProps {
-    resumeElement: ResumeElementObject
+interface WorkElementProps {
+    resumeElement: WorkElementObject
 }
 
-interface ResumeElementObject {
+interface WorkElementObject {
     companyName : string,
     activity: string,
     description : string,
@@ -18,9 +18,9 @@ interface ResumeElementObject {
 }
 
 
-function ResumeElement(props:ResumeElementProps) {
+function WorkElement(props:WorkElementProps) {
     return (
-        <div>
+        <div className="hover:bg-contrast">
             <div><strong>{props.resumeElement.companyName}</strong>
                 <br/>
                 {props.resumeElement.activity}
@@ -29,6 +29,10 @@ function ResumeElement(props:ResumeElementProps) {
                 <br/>
                 {props.resumeElement.start_date.toDateString()} -
                 {props.resumeElement.end_date.toDateString()}
+                <br/>
+                {props.resumeElement.country}
+                <br/>
+                {props.resumeElement.city}
                 <br/>
                 <div className="flex space-x-2 overflow-x-auto">
                     {props.resumeElement.skills.map((skillNum: number,id:number) =>
@@ -41,4 +45,4 @@ function ResumeElement(props:ResumeElementProps) {
     );
 }
 
-export default ResumeElement;
+export default WorkElement;

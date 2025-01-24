@@ -3,7 +3,7 @@ import ResumeList from "../_components/resume/ResumeList";
 
 function Resume() {
     return (
-        <div className="min-h-screen flex">
+        <div className="flex">
             <div className="w-1/4 p-6 shadow-md">
                 <h2 className="text-2xl font-bold mb-4">Über mich</h2>
                 <p className="text-gray-700 mb-4">

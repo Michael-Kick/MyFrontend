@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+import fluid,{extract, screens, fontSize} from "fluid-tailwind";
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: {
+    files: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+    extract,
+  },
   theme: {
     extend: {
       colors: {
@@ -15,7 +17,9 @@ module.exports = {
         contrastDark: 'var(--color-contrastDark)',
       }
     },
+    screens,
+    fontSize,
   },
-  plugins: [],
+  plugins: [fluid],
 }
 
