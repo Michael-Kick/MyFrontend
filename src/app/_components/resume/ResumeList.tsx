@@ -90,21 +90,25 @@ function ResumeList() {
     return (
         <div>
             <section className="mb-8">
-                <div className="flex">
+                <div className="flex gap-20 justify-evenly">
                     <div>
-                        <h2 className="text-2xl font-semibold">Professional Experience</h2>
+                        <h2 className="text-3xl font-semibold mb-10">Professional Experience</h2>
                         {work_exp.map((exp, id) =>
-                            <WorkElement key={id} resumeElement={exp}/>)}
+                        <div className='mb-10'>
+                            <WorkElement key={id} resumeElement={exp}/>
+                        </div>
+                        )}
                     </div>
                     <div>
-                        <h2 className="text-2xl font-semibold">Education</h2>
+                        <h2 className="text-3xl font-semibold mb-10">Education</h2>
                         {education.map((edu, id) =>
+                        <div className='mb-10'>
                             <EducationElement key={id} educationElement={edu}/>
+                        </div>
                         )}
                     </div>
                 </div>
             </section>
-
         </div>
     );
 }
