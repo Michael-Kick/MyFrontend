@@ -7,40 +7,39 @@ interface WorkElementProps {
 }
 
 interface WorkElementObject {
-    companyName : string,
+    companyName: string,
     activity: string,
-    description : string,
-    start_date : Date,
-    end_date : Date,
-    country : string,
-    city : string,
+    projectName: string,
+    description: string,
+    start_date: Date,
+    end_date: Date,
+    country: string,
+    city: string,
     skills: number[]
 }
 
 
-function WorkElement(props:WorkElementProps) {
+function WorkElement(props: WorkElementProps) {
     return (
         <div className="hover:bg-contrast">
-            <div><strong>{props.resumeElement.companyName}</strong>
-                <br/>
-                {props.resumeElement.activity}
-                <br/>
-                {props.resumeElement.description}
-                <br/>
+            <h3 className="mb-2 text-2xl font-bold">{props.resumeElement.companyName}</h3>
+            <div className="mb-2 font-bold">{props.resumeElement.projectName}</div>
+            <div className="mb-2">{props.resumeElement.activity}</div>
+            <div className="mb-4">{props.resumeElement.description}</div>
+            <div>
                 {props.resumeElement.start_date.toDateString()} -
                 {props.resumeElement.end_date.toDateString()}
-                <br/>
-                {props.resumeElement.country}
-                <br/>
-                {props.resumeElement.city}
-                <br/>
-                <div className="flex space-x-2 overflow-x-auto">
-                    {props.resumeElement.skills.map((skillNum: number,id:number) =>
-                        <SkillTag skillKey={skillNum} key={id}/>
-                    )}
-                </div>
-
             </div>
+            <div>
+                {props.resumeElement.country}, {props.resumeElement.city}
+            </div>
+            <div className="flex flex-wrap gap-2 m-3">
+                {props.resumeElement.skills.map((skillNum: number, id: number) =>
+                    <SkillTag skillKey={skillNum} key={id}/>
+                )}
+            </div>
+
+
         </div>
     );
 }

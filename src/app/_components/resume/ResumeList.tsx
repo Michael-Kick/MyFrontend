@@ -6,6 +6,7 @@ const work_exp = [
     {
         companyName: 'Siemens AG',
         activity: 'App Development',
+        projectName: 'Cockpit-Tool Mobile',
         description: '',
         start_date: new Date(2019, 10, 1),
         end_date: new Date(2020, 9, 1),
@@ -16,6 +17,7 @@ const work_exp = [
     {
         companyName: 'Projekt 29 GmbH & Co.KG',
         activity: "Backend Development",
+        projectName: 'Privacysoft',
         description: '',
         start_date: new Date(2021, 5, 1),
         end_date: new Date(2022, 10, 1),
@@ -25,7 +27,8 @@ const work_exp = [
     },
     {
         companyName: 'Universidade do Algarve',
-        activity: "App Development",
+        activity: "App/Web Development",
+        projectName: 'Milage 2+ Design Revision',
         description: '',
         start_date: new Date(2022, 2, 1),
         end_date: new Date(2022, 8, 1),
@@ -36,6 +39,7 @@ const work_exp = [
     {
         companyName: 'INSYS Icom',
         activity: "Frontend Development",
+        projectName: 'Icom Router Management',
         description: '',
         start_date: new Date(2023, 3, 1),
         end_date: new Date(2024, 4, 1),
@@ -46,6 +50,7 @@ const work_exp = [
     {
         companyName: 'Finanz IT',
         activity: "ABAP Development",
+        projectName: 'VIVA Bezügeabrechnung',
         description: '',
         start_date: new Date(2024, 9, 1),
         end_date: new Date(2025, 3, 1),
@@ -84,7 +89,6 @@ const education = [
 function ResumeList() {
     return (
         <div>
-            <h1 className="text-4xl font-bold mb-4">My Resume</h1>
             <section className="mb-8">
                 <div className="flex">
                     <div>

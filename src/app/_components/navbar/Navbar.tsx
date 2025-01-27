@@ -21,7 +21,7 @@ const Navbar = () => {
             z-50
             top-0
             px-6
-            max-w-screen-xl
+            max-w-screen-2xl
             m-auto
             text-text
             flex

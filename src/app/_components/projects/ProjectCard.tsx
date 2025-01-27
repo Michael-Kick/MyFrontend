@@ -8,39 +8,36 @@ interface ProjectCardProps {
 }
 
 interface ProjectObject {
-    projectName : string,
+    projectName: string,
     activity: string,
-    icon:string,
-    imgUrl:string,
-    companyName : string,
-    companyLogo : string,
-    description : string,
-    projectSkills : number[]
+    icon: string,
+    imgUrl: string,
+    companyName: string,
+    description: string,
+    projectSkills: number[]
 }
 
 
-const ProjectCard = (props:ProjectCardProps) => {
+const ProjectCard = (props: ProjectCardProps) => {
 
     return (
-        <div className="relative flex flex-col my-6 bg-contrastDark shadow-sm border border-slate-200 rounded-lg w-96">
-            <div>
-                icon
+        <div className="flex flex-col max-w-sm m-12 p-6 border bg-contrastDark border-gray-200 rounded-lg shadow-sm">
+            <div className="grid grid-cols-[70%_30%] items-center gap-4">
+                <h3 className="mb-2 text-2xl font-bold">{props.project.projectName}</h3>
+                <div>
+                    <Image
+                        src={props.project.imgUrl}
+                        alt=""
+                        width={120}
+                        height={90}
+                    />
+                </div>
             </div>
-            <h3>{props.project.projectName}</h3>
-            <div className="absolute top-4 right-4 flex space-x-2">
-                <Image
-                    src={props.project.imgUrl}
-                    alt=""
-                    width={120}
-                    height={90}
-                />
-            </div>
-            <div>{props.project.companyName}</div>
-            <div>{props.project.companyLogo}</div>
-            <div>{props.project.description}</div>
-            <div className="flex space-x-2 overflow-x-auto">
-                {props.project.projectSkills.map((skillNum: number) =>
-                    <SkillTag skillKey={skillNum}/>
+            <div className="mb-2 font-bold">{props.project.companyName}</div>
+            <p className="mb-4">{props.project.description}</p>
+            <div className="flex flex-wrap gap-2 mt-3">
+                {props.project.projectSkills.map((skillNum: number, index) =>
+                    <SkillTag skillKey={skillNum} key={index}/>
                 )}
             </div>
         </div>
