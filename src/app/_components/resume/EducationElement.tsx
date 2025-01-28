@@ -21,21 +21,21 @@ interface EducationElementObject {
 
 function EducationElement(props:EducationElementProps) {
     return (
-        <div>
-            <div><strong>{props.educationElement.academicTitle}</strong>
-                <br/>
-                {props.educationElement.university}
-                <br/>
-                {props.educationElement.thesisTitle}
-                <br/>
-                {props.educationElement.start_date.toDateString()} -
-                {props.educationElement.end_date.toDateString()}
-                <br/>
-                {props.educationElement.country}
-                <br/>
-                {props.educationElement.city}
-                <br/>
-                <div className="flex space-x-2">
+        <div className='hover:bg-contrastDark mb-10'>
+            <div>
+                <h3 className="mb-2 text-2xl font-bold whitespace-pre-wrap">{props.educationElement.academicTitle}</h3>
+                <div className="mb-2 font-bold">{props.educationElement.university}</div>
+                <div className="mb-4">
+                    {props.educationElement.thesisTitle}
+                </div>
+                <div>
+                    {props.educationElement.start_date.toDateString()} -
+                    {props.educationElement.end_date.toDateString()}
+                </div>
+                <div className="mb-4">
+                    {props.educationElement.country}, {props.educationElement.city}
+                </div>
+                <div className="flex flex-wrap gap-3 mb-4">
                     {props.educationElement.skills.map((skillNum: number, id: number) =>
                         <SkillTag skillKey={skillNum} key={id}/>
                     )}

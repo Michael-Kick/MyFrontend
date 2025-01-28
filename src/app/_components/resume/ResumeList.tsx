@@ -62,25 +62,25 @@ const work_exp = [
 
 const education = [
     {
-        academicTitle: 'M. Sc. Computer Science',
+        academicTitle: 'Master of Science \nin \nComputer Science',
         university: 'Ostbayerische Technische Hochschule Regensburg',
         thesisTitle: 'Konzeptionierung und Entwicklung eines KI-basierten Agenten für den Kundensupport',
         description: 'did some stuff there lel',
-        start_date : new Date(2021, 10, 1),
-        end_date : new Date(2024, 8, 1),
-        country : 'Germany',
-        city : 'Regensburg',
-        skills: [5 ,9]
+        start_date: new Date(2021, 10, 1),
+        end_date: new Date(2024, 8, 1),
+        country: 'Germany',
+        city: 'Regensburg',
+        skills: [5, 9]
     },
     {
         academicTitle: 'B. Sc. Information Systems',
         university: 'Ostbayerische Technische Hochschule Regensburg',
         thesisTitle: 'Konzeptionierung und Entwicklung einer Authentifizierungsarchitektur im Smart Grid',
         description: 'did some stuff there lel',
-        start_date : new Date(2017, 10, 1),
-        end_date : new Date(2021, 8, 1),
-        country : 'Germany',
-        city : 'Regensburg',
+        start_date: new Date(2017, 10, 1),
+        end_date: new Date(2021, 8, 1),
+        country: 'Germany',
+        city: 'Regensburg',
         skills: [7]
     },
 ]
@@ -89,26 +89,22 @@ const education = [
 function ResumeList() {
     return (
         <div>
-            <section className="mb-8">
+
                 <div className="flex gap-20 justify-evenly">
-                    <div>
+                    <div className="flex-1 max-w-96">
                         <h2 className="text-3xl font-semibold mb-10">Professional Experience</h2>
-                        {work_exp.map((exp, id) =>
-                        <div className='mb-10'>
+                        {work_exp.map((exp, id: number) =>
                             <WorkElement key={id} resumeElement={exp}/>
-                        </div>
                         )}
                     </div>
-                    <div>
+                    <div className="flex-1 max-w-96">
                         <h2 className="text-3xl font-semibold mb-10">Education</h2>
                         {education.map((edu, id) =>
-                        <div className='mb-10'>
                             <EducationElement key={id} educationElement={edu}/>
-                        </div>
                         )}
                     </div>
                 </div>
-            </section>
+
         </div>
     );
 }

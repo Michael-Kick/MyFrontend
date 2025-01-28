@@ -21,7 +21,7 @@ interface WorkElementObject {
 
 function WorkElement(props: WorkElementProps) {
     return (
-        <div className="hover:bg-contrast">
+        <div className="hover:bg-contrastDark mb-10">
             <h3 className="mb-2 text-2xl font-bold">{props.resumeElement.companyName}</h3>
             <div className="mb-2 font-bold">{props.resumeElement.projectName}</div>
             <div className="mb-2">{props.resumeElement.activity}</div>
@@ -30,10 +30,10 @@ function WorkElement(props: WorkElementProps) {
                 {props.resumeElement.start_date.toDateString()} -
                 {props.resumeElement.end_date.toDateString()}
             </div>
-            <div>
+            <div className="mb-4">
                 {props.resumeElement.country}, {props.resumeElement.city}
             </div>
-            <div className="flex flex-wrap gap-2 m-3">
+            <div className="flex flex-wrap gap-3 mb-4">
                 {props.resumeElement.skills.map((skillNum: number, id: number) =>
                     <SkillTag skillKey={skillNum} key={id}/>
                 )}
