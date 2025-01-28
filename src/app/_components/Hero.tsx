@@ -24,7 +24,7 @@ function Hero() {
                         className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
                     </div>
                     <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row" >
-                        <CustomizedButton text="Contact Me" functionIndex={0}/>
+                        <CustomizedButton text="Contact Me" functionIndex={0} href="/contact"/>
                         <CustomizedButton text="Download CV" functionIndex={1}/>
                     </div>
                 </div>

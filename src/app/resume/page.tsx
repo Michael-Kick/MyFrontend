@@ -1,10 +1,11 @@
 import React from 'react';
 import ResumeList from "../_components/resume/ResumeList";
+import Headline from "../_components/Headline";
 
 function Resume() {
     return (
-        <div className="grid-rows-2">
-            <h1 className="text-7xl font-bold flex justify-start pb-12">My Resume</h1>
+        <div>
+            <Headline text="My Resume"/>
             <div className='flex gap-40'>
                 <div className="flex flex-col max-w-72">
                     <h2 className="text-3xl font-semibold mb-10">Über mich</h2>

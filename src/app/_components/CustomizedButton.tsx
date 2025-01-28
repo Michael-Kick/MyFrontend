@@ -1,18 +1,25 @@
 "use client";
 import React from 'react';
+import { useRouter } from "next/navigation";
 
 interface ButtonProps {
     text: string;
     functionIndex: number;
+    href?: string;
 }
 
-const onClickFunctions = [
-    () => {alert("i was clicked!");},
-    () => {console.log("now The other button was clicked");}
-]
+function CustomizedButton({functionIndex,text,href}:ButtonProps) {
+    const router = useRouter();
 
 
-function CustomizedButton({functionIndex,text}:ButtonProps) {
+    const onClickFunctions = [
+        () => {
+            if (href != null) {
+                router.push(href)
+            }}
+    ]
+
+
     return (
         <button className="px-8 py-4 text-lg font-medium text-center text-text bg-primary rounded-md"
                 onClick={onClickFunctions[functionIndex]}>
