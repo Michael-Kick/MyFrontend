@@ -90,7 +90,7 @@ function ResumeList() {
     return (
         <div>
 
-                <div className="flex gap-20 justify-evenly">
+                <div className="flex gap-40 justify-evenly">
                     <div className="flex-1 max-w-96">
                         <h2 className="text-3xl font-semibold mb-10">Professional Experience</h2>
                         {work_exp.map((exp, id: number) =>

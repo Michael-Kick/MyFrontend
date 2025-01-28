@@ -1,16 +1,21 @@
+"use client";
 import React from 'react';
 
 interface ButtonProps {
     text: string;
-    onClick: ()=> void;
+    functionIndex: number;
 }
 
+const onClickFunctions = [
+    () => {alert("i was clicked!");},
+    () => {console.log("now The other button was clicked");}
+]
 
 
-function CustomizedButton({onClick,text}:ButtonProps) {
+function CustomizedButton({functionIndex,text}:ButtonProps) {
     return (
-        <button className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row text-white bg-indigo-600 rounded-md px-4 py-2 hover:bg-indigo-700 transition-all duration-300"
-                onClick={onClick}>
+        <button className="px-8 py-4 text-lg font-medium text-center text-text bg-primary rounded-md"
+                onClick={onClickFunctions[functionIndex]}>
             {text}
         </button>
     );

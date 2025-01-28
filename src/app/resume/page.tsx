@@ -4,9 +4,9 @@ import ResumeList from "../_components/resume/ResumeList";
 function Resume() {
     return (
         <div className="grid-rows-2">
-            <h1 className="text-6xl font-bold flex justify-start ps-6 pt-10 pb-10">My Resume</h1>
-            <div className='flex gap-20 p-6'>
-                <div className="flex flex-col max-w-72 pt-6">
+            <h1 className="text-7xl font-bold flex justify-start pb-12">My Resume</h1>
+            <div className='flex gap-40'>
+                <div className="flex flex-col max-w-72">
                     <h2 className="text-3xl font-semibold mb-10">Über mich</h2>
                     <p className="text-gray-700 mb-4">
                         Hier kannst du deine persönlichen Details wie Name, Beruf, Kontaktinformationen und eine kurze
@@ -21,7 +21,7 @@ function Resume() {
                         </li>
                     </ul>
                 </div>
-                <div className="flex-1 p-6">
+                <div className="flex-1">
                     <ResumeList/>
                 </div>
             </div>
