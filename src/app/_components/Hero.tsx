@@ -1,11 +1,24 @@
+"use client";
 import React from 'react';
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import CustomizedButton from "./CustomizedButton";
+
 
 function Hero() {
 
+    const router = useRouter();
+
     const heroTitle: string = "Hello \nmy name's Michael.";
 
+
+    const contactClicked = () => {
+        router.push("/contact")
+    }
+
+    const downloadClicked = () => {
+        console.log("download Clicked!")
+    }
 
     return (
         <div className="flex flex-wrap ">
@@ -24,8 +37,8 @@ function Hero() {
                         className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
                     </div>
                     <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row" >
-                        <CustomizedButton text="Contact Me" functionIndex={0} href="/contact"/>
-                        <CustomizedButton text="Download CV" functionIndex={1}/>
+                        <CustomizedButton text="Contact Me" onClick={contactClicked} />
+                        <CustomizedButton text="Download CV" onClick={downloadClicked}/>
                     </div>
                 </div>
 
