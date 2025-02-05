@@ -22,7 +22,7 @@ const Contact = () => {
     const [message, setMessage] = useState('')
 
     const submitClicked = () => {
-        alert(process.env)
+        alert(process.env.RESEND_API_KEY)
     }
 
 
