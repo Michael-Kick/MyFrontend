@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Headline from "../_components/Headline";
 import CustomizedInput from "../_components/CustomizedInput";
 import CustomizedButton from '../_components/CustomizedButton';
+import { POST } from '../api/send/route';
 
 
 interface inputProps {
@@ -21,7 +22,7 @@ const Contact = () => {
     const [message, setMessage] = useState('')
 
     const submitClicked = () => {
-        alert("submitted: " + firstName + lastName+ company + email +phoneNumber + message)
+        alert(process.env)
     }
 
 
