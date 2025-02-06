@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Headline from "../_components/Headline";
 import CustomizedInput from "../_components/CustomizedInput";
 import CustomizedButton from '../_components/CustomizedButton';
-import { POST } from '../api/send/route';
 
 
 interface inputProps {
@@ -21,8 +20,20 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('')
 
-    const submitClicked = () => {
-        alert(process.env.RESEND_API_KEY)
+    async function submitClicked() {
+        const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                to: 'superseppp@web.de',
+                firstName: 'John',
+                lastName: 'Doe',
+                message: 'Hallo von Next.js!'
+            })
+        });
+
+        const data = await response.json();
+        console.log(data);
     }
 
 
