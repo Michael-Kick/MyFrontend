@@ -5,15 +5,14 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const POST = async (req: Request) => {
     try {
-        const { } = await req.json();
+        const {to, message} = await req.json();
 
         const { data, error } = await resend.emails.send({
-            from: 'michael-kick@gmx.de',
-            to: 'superseppp@web.de',
-            subject: 'Hello world',
-            text: 'Hello world too'
-            // react: EmailTemplate({ firstName, lastName, message }),
-        });
+            from: 'Acme <onboarding@resend.dev>',
+            to: [to],
+            subject: message,
+            html: '<p>this test</p>',
+          });
 
         if (error) {
             return Response.json({ error }, { status: 500 });

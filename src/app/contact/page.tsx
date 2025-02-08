@@ -25,9 +25,9 @@ const Contact = () => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                to: 'superseppp@web.de',
-                firstName: 'John',
-                lastName: 'Doe',
+                to: 'michael-kick@gmx.de',
+                //firstName: 'John',
+                //lastName: 'Doe',
                 message: 'Hallo von Next.js!'
             })
         });
