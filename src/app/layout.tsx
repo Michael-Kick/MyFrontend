@@ -12,7 +12,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         {/* Layout UI */}
         {/* Place children where you want to render a page or nested layout */}
         <Navbar/>
-        <main className="flex flex-grow w-full max-w-screen-2xl mx-auto pt-10 pb-10">{children}</main>
+        <main className="flex flex-grow w-full max-w-screen-2xl mx-auto pt-10 pb-10 justify-center">{children}</main>
         <Footer/>
         </body>
         </html>

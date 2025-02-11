@@ -5,7 +5,7 @@ import { Experience } from '../_components/Experience';
 
 function Resume() {
     return (
-        <div>
+        <div className="w-full">
             <Experience/>
         </div>
     );
