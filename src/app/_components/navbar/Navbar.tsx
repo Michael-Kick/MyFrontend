@@ -30,12 +30,12 @@ const Navbar = () => {
             h-20"
             >
                 {/* Logo */}
-                <div className="flex text-3xl">
+                <div className="flex text-lg">
                     <NavLink href="/public" label="MyBrand"/>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="flex text-xl">
+                <div className="flex  text-lg">
                     {navLinks.map((link) => (
                         <NavLink
                             key={link.href}

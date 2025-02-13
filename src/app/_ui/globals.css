@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mont:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +9,7 @@
 
 @layer base {
     :root {
-        --color-primary: hsl(220, 100%, 50%);
+        --color-primary: hsl(180.5, 47.8%, 54.9%);
         --color-secondary: hsl(0, 0%, 50%);
         --color-danger: hsl(0, 100%, 50%);
         --color-background: hsl(0, 0%, 100%);
@@ -17,12 +19,12 @@
     }
     @media (prefers-color-scheme: dark) {
         :root {
-            --color-primary: hsl(220, 100%, 50%);
+            --color-primary: hsl(180.5, 47.8%, 54.9%);
             --color-secondary: hsl(0, 0%, 50%);
             --color-danger: hsl(0, 100%, 50%);
-            --color-background: hsl(213, 24%, 7%);
-            --color-text-base: hsl(0, 0%, 100%);
-            --color-contrast: hsl(220,13%,91%);
+            --color-background: hsl(210,66.7%,14.1%);
+            --color-text-base: hsl(200,12.5%,81.2%);
+            --color-contrast: hsl(212,13.2%,55.3%);
             --color-contrastDark: hsl(220, 46%, 27%);
         }
     }

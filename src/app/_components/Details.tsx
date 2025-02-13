@@ -19,7 +19,7 @@ interface WorkElementObject {
 
 export const Details = (props:WorkElementProps) => {
     return (
-        <li className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-start justify-between md:w-[80%]">
+        <li className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-start justify-between">
             <LiIcon/>
             <div>
                 <h3 className="capitalize font-bold text-2xl">{props.resumeElement.activity}&nbsp;<a href={props.resumeElement.companyLink} className="text-primary">

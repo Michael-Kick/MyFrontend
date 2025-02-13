@@ -7,8 +7,14 @@ module.exports = {
   },
   theme: {
     extend: {
+      fontSize: {
+        base: '20px', // Default font size
+        lg: '25px',
+        xl: '30px',
+      },
       fontFamily: {
         jetbrains: ['JetBrains Mono', 'monospace'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
         primary: 'var(--color-primary)',
