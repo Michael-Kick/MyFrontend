@@ -7,6 +7,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      fontFamily: {
+        jetbrains: ['JetBrains Mono', 'monospace'],
+      },
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
