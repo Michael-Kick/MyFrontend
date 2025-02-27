@@ -1,10 +1,27 @@
-const workExp = [
+export interface IWorkDetail {
+    companyName: string,
+    companyLink: string,
+    activity: string,
+    projectName: string,
+    description: string[],
+    start_date: Date,
+    end_date: Date,
+    country: string,
+    city: string,
+    skills: number[]
+}
+
+const workExp: IWorkDetail[] = [
     {
         companyName: 'Siemens AG',
-        companyLink:"https://www.siemens.com/de/de.html",
+        companyLink: "https://www.siemens.com/de/de.html",
         activity: 'App Development',
         projectName: 'Cockpit-Tool Mobile',
-        description: 'did some stuff there leldid some stuff there lel',
+        description: [
+            'Developed a cross-platform application to provide a clear, structured overview of project data and milestones for internal use',
+            'Key stakeholders were Multiple project managers and my supervisor',
+            'Project requirements and the development of new features were discussed in weekly meetings',
+        ],
         start_date: new Date(2019, 10, 1),
         end_date: new Date(2020, 9, 1),
         country: 'Germany',
@@ -13,10 +30,15 @@ const workExp = [
     },
     {
         companyName: 'Projekt 29 GmbH & Co.KG',
-        companyLink:"https://projekt29.de/",
+        companyLink: "https://projekt29.de/",
         activity: "Backend Development",
         projectName: 'Privacysoft',
-        description: 'did some stuff there leldid some stuff there leldid some stuff there leldid some stuff there lel',
+        description: [
+            'Contributed to the development of the web application Privacysoft',
+            'Implemented and expanded Data Access Objects (DAOs) that served as API between the Database and the Backend',
+            'Created Unit tests for existing code',
+            'Collaborated in a five person team (two backend and three fronted)'
+        ],
         start_date: new Date(2021, 5, 1),
         end_date: new Date(2022, 10, 1),
         country: 'Germany',
@@ -25,10 +47,14 @@ const workExp = [
     },
     {
         companyName: 'Universidade do Algarve',
-        companyLink:"https://www.ualg.pt/",
+        companyLink: "https://www.ualg.pt/",
         activity: "App/Web Development",
         projectName: 'Milage 2+ Design Revision',
-        description: 'did some stuff there leldid some stuff there leldid some stuff there lel',
+        description: [
+            'Developed the user interface of a cross-platform app designed to enhance learning for students and allow parents and teachers to monitor performance',
+            'Collaborated with a team consisting of a designer, a backend developer, myself (frontend developer), and another frontend developer.',
+            'Requirements and features have been discussed with the professor of the University of the Algarve'
+        ],
         start_date: new Date(2022, 2, 1),
         end_date: new Date(2022, 8, 1),
         country: 'Portugal',
@@ -37,10 +63,14 @@ const workExp = [
     },
     {
         companyName: 'INSYS Icom',
-        companyLink:"https://www.insys-icom.com/",
+        companyLink: "https://www.insys-icom.com/",
         activity: "Frontend Development",
         projectName: 'Icom Router Management',
-        description: 'did some stuff there leldid some stuff there leldid some stuff there lel',
+        description: [
+            'Contributed to the further development of web applications and the implementation of new features',
+            'The web application enables customers to manage their own routers independently',
+            ' Worked in an Agile Scrum environment with a backend team of two, a frontend team of four (including myself), and key stakeholders including the Product Owner and Scrum Master',
+        ],
         start_date: new Date(2023, 3, 1),
         end_date: new Date(2024, 4, 1),
         country: 'Germany',
@@ -49,10 +79,13 @@ const workExp = [
     },
     {
         companyName: 'Landesamt für Finanzen - Finanz IT',
-        companyLink:"https://www.lff.bayern.de/themen/finanzit-bayern/",
+        companyLink: "https://www.lff.bayern.de/themen/finanzit-bayern/",
         activity: "ABAP Development",
         projectName: 'VIVA Bezügeabrechnung',
-        description: '',
+        description: [
+            'Assisted in the smooth execution of the monthly payroll process',
+            'Contributed to the SAP migration to the next version, including all necessary code changes',
+        ],
         start_date: new Date(2024, 9, 1),
         end_date: new Date(2025, 3, 1),
         country: 'Germany',
@@ -61,13 +94,31 @@ const workExp = [
     }
 ]
 
+export interface IEducationDetail {
+    academicTitle: string,
+    university: string,
+    uniLink: string,
+    thesisTitle: string,
+    description: string[],
+    start_date: Date,
+    end_date: Date,
+    country: string,
+    city: string,
+    skills: number[]
+}
 
-const edu = [
+
+const edu: IEducationDetail[] = [
     {
-        academicTitle: 'Master of Science \nin \nComputer Science',
-        university: 'Ostbayerische Technische Hochschule Regensburg',
-        thesisTitle: 'Konzeptionierung und Entwicklung eines KI-basierten Agenten für den Kundensupport',
-        description: 'did some stuff there lel',
+        academicTitle: 'Master of Science Computer Science',
+        university: 'OTH Regensburg',
+        uniLink: "https://www.oth-regensburg.de/",
+        thesisTitle: 'Created an AI-based Agent for the Customer Support',
+        description: [
+            'Researched the structure and architectures of large language models (LLMs) and compared various models based on cost, performance, and speed',
+            'Evaluated and compared two approaches, Retrieval Augmented Generation (RAG) and fine-tuning, for a specific use case',
+            'Presented a custom chatbot architecture and evaluated its performance',
+        ],
         start_date: new Date(2021, 10, 1),
         end_date: new Date(2024, 8, 1),
         country: 'Germany',
@@ -75,10 +126,15 @@ const edu = [
         skills: [5, 9]
     },
     {
-        academicTitle: 'B. Sc. Information Systems',
-        university: 'Ostbayerische Technische Hochschule Regensburg',
-        thesisTitle: 'Konzeptionierung und Entwicklung einer Authentifizierungsarchitektur im Smart Grid',
-        description: 'did some stuff there lel',
+        academicTitle: 'Bachelor of Science Information Systems',
+        university: 'OTH Regensburg',
+        uniLink: "https://www.oth-regensburg.de/",
+        thesisTitle: 'Created an Authentication Architecture for the Smart Grid',
+        description: [
+            'Implemented various authentication methods and evaluated them across different use cases',
+            'Assessed and compared authentication methods based on security and performance',
+            'Analyzed the use case of ambient assisted living in conjunction with a smart grid to evaluate the most suitable authentication methods',
+        ],
         start_date: new Date(2017, 10, 1),
         end_date: new Date(2021, 8, 1),
         country: 'Germany',
@@ -89,8 +145,8 @@ const edu = [
 
 
 const resumeObj = {
-    work_exp : workExp,
-    education : edu
+    work_exp: workExp,
+    education: edu
 }
 
 export default resumeObj;

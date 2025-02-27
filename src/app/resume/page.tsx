@@ -1,12 +1,13 @@
 import React from 'react';
-import ResumeList from "../_components/resume/ResumeList";
-import Headline from "../_components/Headline";
-import { Experience } from '../_components/Experience';
+import {ResumeElement} from '../_components/ResumeElement';
+import resumeObj from "../_components/resume/workExperience";
+
 
 function Resume() {
     return (
         <div className="w-full">
-            <Experience/>
+            <ResumeElement heading="Work Experience" workElement={resumeObj.work_exp}/>
+            <ResumeElement heading="Education" educationElement={resumeObj.education}/>
         </div>
     );
 }
