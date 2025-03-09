@@ -91,6 +91,21 @@ const workExp: IWorkDetail[] = [
         country: 'Germany',
         city: 'Regensburg',
         skills: [11]
+    },
+    {
+        companyName: 'TGW Logistics',
+        companyLink: "https://www.tgw-group.com/de",
+        activity: "Java Development",
+        projectName: 'Warehouse Management Software Deployment',
+        description: [
+            'Installed and configured warehouse software on-site for the food, fashion, and industrial goods sectors',
+            'Used Java for system setup and integration',
+        ],
+        start_date: new Date(2025, 3, 1),
+        end_date: new Date(),
+        country: 'Germany',
+        city: 'Regensburg',
+        skills: [11]
     }
 ]
 
@@ -113,7 +128,7 @@ const edu: IEducationDetail[] = [
         academicTitle: 'Master of Science Computer Science',
         university: 'OTH Regensburg',
         uniLink: "https://www.oth-regensburg.de/",
-        thesisTitle: 'Created an AI-based Agent for the Customer Support',
+        thesisTitle: 'Masters Thesis: Created an AI-based Agent for the Customer Support',
         description: [
             'Researched the structure and architectures of large language models (LLMs) and compared various models based on cost, performance, and speed',
             'Evaluated and compared two approaches, Retrieval Augmented Generation (RAG) and fine-tuning, for a specific use case',
@@ -129,7 +144,7 @@ const edu: IEducationDetail[] = [
         academicTitle: 'Bachelor of Science Information Systems',
         university: 'OTH Regensburg',
         uniLink: "https://www.oth-regensburg.de/",
-        thesisTitle: 'Created an Authentication Architecture for the Smart Grid',
+        thesisTitle: 'Bachelors Thesis: Created an Authentication Architecture for the Smart Grid',
         description: [
             'Implemented various authentication methods and evaluated them across different use cases',
             'Assessed and compared authentication methods based on security and performance',
