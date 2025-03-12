@@ -1,23 +1,11 @@
 import React from 'react';
 import SkillTag from "../projects/SkillTag";
+import { IWorkDetail } from './workExperience';
 
 
 interface WorkElementProps {
-    resumeElement: WorkElementObject
+    resumeElement: IWorkDetail
 }
-
-interface WorkElementObject {
-    companyName: string,
-    activity: string,
-    projectName: string,
-    description: string,
-    start_date: Date,
-    end_date: Date,
-    country: string,
-    city: string,
-    skills: number[]
-}
-
 
 function WorkElement(props: WorkElementProps) {
     return (

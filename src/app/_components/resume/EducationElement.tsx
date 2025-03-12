@@ -1,22 +1,11 @@
 import React from 'react';
 import SkillTag from "../projects/SkillTag";
+import { IEducationDetail } from './workExperience';
 
 
 
 interface EducationElementProps{
-    educationElement: EducationElementObject
-}
-
-interface EducationElementObject {
-    academicTitle: string,
-    university: string,
-    thesisTitle: string,
-    description: string,
-    start_date : Date,
-    end_date : Date,
-    country : string,
-    city : string,
-    skills: number[]
+    educationElement: IEducationDetail
 }
 
 function EducationElement(props:EducationElementProps) {
