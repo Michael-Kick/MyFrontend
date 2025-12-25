@@ -127,7 +127,7 @@ const Contact = () => {
             <div className="mb-2 mt-2">
                 <label className="block mb-2 text-text">Message*</label>
                 <textarea id="message" rows={3} onChange={(e) => setMessage(e.target.value)}
-                          className="block p-2.5 w-full text-text bg-contrastDark border border-contrastDark rounded-lg focus:ring-primary focus:border-primary"
+                          className="block p-2.5 w-full text-text bg-contrast border border-border rounded-lg focus:ring-primary focus:border-primary transition-colors placeholder:text-secondary/80"
                           placeholder="Leave a comment..."></textarea>
                 {errors.message && <p className="text-danger text-sm">{errors.message}</p>}
             </div>

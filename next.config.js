@@ -1,5 +1,4 @@
-module.exports = {
-    env: {
-      RESEND_KEY: process.env.RESEND_API_KEY
-    }
-  };
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+module.exports = nextConfig;

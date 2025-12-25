@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="
             bg-background
             border-b
-            border-contrast">
+            border-border">
             <nav
                 className="
             w-full
@@ -31,7 +31,7 @@ const Navbar = () => {
             >
                 {/* Logo */}
                 <div className="flex text-lg">
-                    <NavLink href="/public" label="MyBrand"/>
+                    <NavLink href="/" label="MyBrand"/>
                 </div>
 
                 {/* Desktop Menu */}

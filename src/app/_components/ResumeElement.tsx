@@ -15,7 +15,7 @@ export const ResumeElement = (props: ResumeElementProps) => {
         <div className="mb-32">
             <h1 className='font-bold text-8xl mb-16 w-full pl-[28%]'>{props.heading}</h1>
             <div className="w-[75%] mx-auto relative">
-                <div className="absolute left-9 top-1 w-[4px] h-full bg-text origin-top"/>
+                <div className="absolute left-9 top-1 w-[4px] h-full bg-border origin-top"/>
                 {props.workElement &&
                     <ul className="w-full flex flex-col items-start justify-between ml-4">
                         {props.workElement.map((exp, id: number) =>

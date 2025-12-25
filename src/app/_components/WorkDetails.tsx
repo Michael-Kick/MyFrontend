@@ -1,5 +1,6 @@
 import LiIcon from "./LiIcon";
 import formatMonthYearISO from "../_utils/DateFormat";
+import SkillTag from "../_components/projects/SkillTag";
 
 interface WorkElementProps {
     resumeElement: WorkElementObject
@@ -26,7 +27,7 @@ export const WorkDetails = (props: WorkElementProps) => {
                 <h3 className="capitalize font-bold text-3xl">{props.resumeElement.activity}&nbsp;<a
                     href={props.resumeElement.companyLink} className="text-primary">
                     @{props.resumeElement.companyName}</a></h3>
-                <span className="font-medium text-primary">
+                <span className="font-medium text-secondary">
                     {formatMonthYearISO(props.resumeElement.start_date) + ' - ' + formatMonthYearISO(props.resumeElement.end_date)} | {props.resumeElement.city + ", " + props.resumeElement.country}
                 </span>
                 <h4 className="font-bold text-2xl">{props.resumeElement.projectName}</h4>
@@ -35,6 +36,11 @@ export const WorkDetails = (props: WorkElementProps) => {
                         <li key={id}>{bulletPoint}</li>
                     ))}
                 </ul>
+                <div className="flex flex-wrap gap-2 mt-3">
+                    {props.resumeElement.skills.map((skillKey: number, id: number) => (
+                        <SkillTag key={id} skillKey={skillKey} />
+                    ))}
+                </div>
             </div>
         </li>
 

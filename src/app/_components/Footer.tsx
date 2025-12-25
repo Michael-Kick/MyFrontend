@@ -35,11 +35,11 @@ const Footer: React.FC = () => {
 
     return (
         <footer
-            className="w-full z-50 bottom-0 bg-contrastDark h-12 flex justify-center">
+            className="w-full z-50 bottom-0 bg-contrast border-t border-border h-12 flex justify-center text-secondary">
             <div className="flex items-stretch">
                 {socialLinks.map((link) => (
                     <Link
-                        className="flex items-center justify-center"
+                        className="flex items-center justify-center px-3 text-text hover:text-primary transition-colors"
                         key={link.href}
                         href={link.href}
                         target="_blank"
@@ -54,7 +54,9 @@ const Footer: React.FC = () => {
                 </div>
             </div>
             {showToTopButton && (
-                <button className="back-to-top" onClick={scrollToTop}>
+                <button
+                    className="ml-4 my-auto px-3 py-1.5 rounded-md bg-primary text-onPrimary text-sm font-medium transition-colors hover:bg-primaryHover"
+                    onClick={scrollToTop}>
                     Zurück nach oben
                 </button>
             )}

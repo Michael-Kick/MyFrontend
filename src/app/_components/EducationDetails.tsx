@@ -1,5 +1,6 @@
 import LiIcon from "./LiIcon";
 import formatMonthYearISO from "../_utils/DateFormat";
+import SkillTag from "../_components/projects/SkillTag";
 
 interface EducationElementProps {
     eduElement: EducationElementObject
@@ -26,7 +27,7 @@ export const EducationDetails = (props: EducationElementProps) => {
                 <h3 className="capitalize font-bold text-3xl">{props.eduElement.academicTitle}&nbsp;<a
                     href={props.eduElement.uniLink} className="text-primary">
                     @{props.eduElement.university}</a></h3>
-                <span className="font-medium text-primary">
+                <span className="font-medium text-secondary">
                     {formatMonthYearISO(props.eduElement.start_date) + ' - ' + formatMonthYearISO(props.eduElement.end_date)} | {props.eduElement.city + ", " + props.eduElement.country}
                 </span>
                 <h4 className="font-bold text-2xl">{props.eduElement.thesisTitle}</h4>
@@ -35,6 +36,11 @@ export const EducationDetails = (props: EducationElementProps) => {
                         <li key={id}>{bulletPoint}</li>
                     ))}
                 </ul>
+                <div className="flex flex-wrap gap-2 mt-3">
+                    {props.eduElement.skills.map((skillKey: number, id: number) => (
+                        <SkillTag key={id} skillKey={skillKey} />
+                    ))}
+                </div>
             </div>
         </li>
 

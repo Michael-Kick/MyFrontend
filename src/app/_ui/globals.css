@@ -9,63 +9,73 @@
 
 @layer base {
     :root {
-        --color-primary: hsl(180.5, 47.8%, 54.9%);
-        --color-secondary: hsl(0, 0%, 50%);
-        --color-danger: hsl(0, 100%, 50%);
-        --color-background: hsl(0, 0%, 100%);
-        --color-text-base: hsl(0, 0%, 0%);
-        --color-contrast: hsl(220,13%,91%);
-        --color-contrastDark: hsl(220, 46%, 27%);
+        color-scheme: light;
+        --color-primary: #0f766e;
+        --color-primary-hover: #115e59;
+        --color-on-primary: #ffffff;
+        --color-secondary: #475569;
+        --color-danger: #dc2626;
+        --color-background: #f8fafc;
+        --color-text-base: #0f172a;
+        --color-border: #e2e8f0;
+        --color-contrast: #ffffff;
+        --color-contrastDark: #f1f5f9;
     }
     @media (prefers-color-scheme: dark) {
         :root {
-            --color-primary: hsl(180.5, 47.8%, 54.9%);
-            --color-secondary: hsl(0, 0%, 50%);
-            --color-danger: hsl(0, 100%, 50%);
-            --color-background: hsl(210,66.7%,14.1%);
-            --color-text-base: hsl(200,12.5%,81.2%);
-            --color-contrast: hsl(212,13.2%,55.3%);
-            --color-contrastDark: hsl(220, 46%, 27%);
+            color-scheme: dark;
+            --color-primary: #2dd4bf;
+            --color-primary-hover: #14b8a6;
+            --color-on-primary: #0b1220;
+            --color-secondary: #94a3b8;
+            --color-danger: #ef4444;
+            --color-background: #0b1220;
+            --color-text-base: #e2e8f0;
+            --color-border: #334155;
+            --color-contrast: #111827;
+            --color-contrastDark: #1f2937;
         }
     }
 
     :root[data-theme='light']{
-        --color-primary: hsl(220, 100%, 50%);
-        --color-secondary: hsl(0, 0%, 50%);
-        --color-danger: hsl(0, 100%, 50%);
-        --color-background: hsl(0, 0%, 100%);
-        --color-text-base: hsl(0, 0%, 0%);
-        --color-contrast: hsl(220,13%,91%);
-        --color-contrastDark: hsl(220, 46%, 27%);
+        color-scheme: light;
+        --color-primary: #0f766e;
+        --color-primary-hover: #115e59;
+        --color-on-primary: #ffffff;
+        --color-secondary: #475569;
+        --color-danger: #dc2626;
+        --color-background: #f8fafc;
+        --color-text-base: #0f172a;
+        --color-border: #e2e8f0;
+        --color-contrast: #ffffff;
+        --color-contrastDark: #f1f5f9;
     }
 
     :root[data-theme='dark']{
-        --color-primary: hsl(220, 100%, 50%);
-        --color-secondary: hsl(0, 0%, 50%);
-        --color-danger: hsl(0, 100%, 50%);
-        --color-background: hsl(0, 0%, 0%);
-        --color-text-base: hsl(0, 0%, 100%);
-        --color-contrast: hsl(220,13%,91%);
-        --color-contrastDark: hsl(220, 46%, 27%);
+        color-scheme: dark;
+        --color-primary: #2dd4bf;
+        --color-primary-hover: #14b8a6;
+        --color-on-primary: #0b1220;
+        --color-secondary: #94a3b8;
+        --color-danger: #ef4444;
+        --color-background: #0b1220;
+        --color-text-base: #e2e8f0;
+        --color-border: #334155;
+        --color-contrast: #111827;
+        --color-contrastDark: #1f2937;
     }
 
-    :root[data-theme='purple']{
-        --color-primary: hsl(270, 100%, 50%);
-        --color-secondary: hsl(270, 100%, 75%);
-        --color-danger: hsl(0, 100%, 50%);
-        --color-background: hsl(0, 0%, 15%);
-        --color-text-base: hsl(0, 0%, 75%);
-        --color-contrast: hsl(220,13%,91%);
-        --color-contrastDark: hsl(220, 46%, 27%);
-    }
-
-    :root[data-theme='blue']{
-        --color-primary: hsl(220, 100%, 50%);
-        --color-secondary: hsl(220, 100%, 75%);
-        --color-danger: hsl(0, 100%, 50%);
-        --color-background: hsl(0, 0%, 15%);
-        --color-text-base: hsl(0, 0%, 75%);
-        --color-contrast: hsl(220,13%,91%);
-        --color-contrastDark: hsl(220, 46%, 27%);
+    :root[data-theme='professional']{
+        color-scheme: light;
+        --color-primary: #0f172a;
+        --color-primary-hover: #111827;
+        --color-on-primary: #ffffff;
+        --color-secondary: #475569;
+        --color-danger: #b91c1c;
+        --color-background: #ffffff;
+        --color-text-base: #0f172a;
+        --color-border: #e5e7eb;
+        --color-contrast: #f8fafc;
+        --color-contrastDark: #eef2f7;
     }
 }

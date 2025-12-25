@@ -21,7 +21,7 @@ interface ProjectObject {
 const ProjectCard = (props: ProjectCardProps) => {
 
     return (
-        <div className="flex flex-col max-w-sm m-12 p-6 border bg-contrastDark border-gray-200 rounded-lg shadow-sm">
+        <div className="flex flex-col max-w-sm m-12 p-6 border bg-contrast border-border rounded-lg shadow-sm transition-colors hover:bg-contrastDark">
             <div className="grid grid-cols-[70%_30%] items-center gap-4">
                 <h3 className="mb-2 text-2xl font-bold">{props.project.projectName}</h3>
                 <div>
@@ -34,7 +34,7 @@ const ProjectCard = (props: ProjectCardProps) => {
                 </div>
             </div>
             <div className="mb-2 font-bold">{props.project.companyName}</div>
-            <p className="mb-4">{props.project.description}</p>
+            <p className="mb-4 text-secondary">{props.project.description}</p>
             <div className="flex flex-wrap gap-2 mt-3">
                 {props.project.projectSkills.map((skillNum: number, index) =>
                     <SkillTag skillKey={skillNum} key={index}/>

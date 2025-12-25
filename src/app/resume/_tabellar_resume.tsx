@@ -9,7 +9,7 @@ function Resume() {
             <div className='flex gap-40'>
                 <div className="flex flex-col max-w-72">
                     <h2 className="text-3xl font-semibold mb-10">Über mich</h2>
-                    <p className="text-gray-700 mb-4">
+                    <p className="text-secondary mb-4">
                         Hier kannst du deine persönlichen Details wie Name, Beruf, Kontaktinformationen und eine kurze
                         Beschreibung angeben.
                     </p>
@@ -18,7 +18,7 @@ function Resume() {
                         <li><span className="font-bold">Telefon:</span> +49 123 456 789</li>
                         <li><span className="font-bold">Adresse:</span> Musterstraße 123, 12345 Musterstadt</li>
                         <li><span className="font-bold">LinkedIn:</span> <a href="#"
-                                                                            className="text-blue-500 hover:underline">linkedin.com/in/deinprofil</a>
+                                                                            className="text-primary hover:underline">linkedin.com/in/deinprofil</a>
                         </li>
                     </ul>
                 </div>
