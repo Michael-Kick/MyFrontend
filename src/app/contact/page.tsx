@@ -51,12 +51,11 @@ const Contact = () => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                to: 'michael-kick@gmx.de', /* email ]*/
+                email: email,
                 firstName: firstName,
                 lastName: lastName,
                 message: message,
                 subject: topic,
-                optionalValues: phoneNumber + company
             })
         });
 
@@ -68,33 +67,33 @@ const Contact = () => {
     const inputProps = [
         {
             label: "First Name*",
-            placeholder: "Max",
+            placeholder: "John",
             type: "text",
             onChange: setFirstName,
             error: errors.firstName,
         },
         {
             label: "Last Name*",
-            placeholder: "Muster mann",
+            placeholder: "Doe",
             type: "text",
             onChange: setLastName,
             error: errors.lastName,
         },
         {
             label: "Company",
-            placeholder: "My Garage Business",
+            placeholder: "Acme Inc.",
             type: "text",
             onChange: setCompany,
         },
         {
             label: "Phone Number",
-            placeholder: "123-45-678",
+            placeholder: "+1 234 567 890",
             type: "tel",
             onChange: setPhoneNumber,
         },
         {
-            label: "E-Mail address*",
-            placeholder: "max.mustermann@mygarage.com",
+            label: "Email*",
+            placeholder: "john.doe@example.com",
             type: "email",
             onChange: setEmail,
             error: errors.email,

@@ -15,40 +15,38 @@ export const ContactConfirmationEmailTemplate = ({
     <Html>
         <Head/>
         <Body style={main}>
-            <Preview>Bestätigung: Deine Nachricht wurde erfolgreich gesendet</Preview>
+            <Preview>Confirmation: Your message has been sent successfully</Preview>
             <Container style={container}>
-                <Text style={heading}>✅ Erfolgreich gesendet!</Text>
-                <Text style={paragraph}>Hallo {userFirstname},</Text>
+                <Text style={heading}>Message Received!</Text>
+                <Text style={paragraph}>Hi {userFirstname},</Text>
                 <Text style={paragraph}>
-                    Vielen Dank für deine Nachricht! Wir haben deine Anfrage erhalten und werden uns so bald wie möglich
-                    bei
-                    dir melden.
+                    Thank you for reaching out! I have received your message and will get back to you as soon as possible.
                 </Text>
-                <Text style={paragraph}><strong>Zusammenfassung deiner Nachricht:</strong></Text>
-                <Text style={paragraph}>✉ <strong>E-Mail:</strong> {userEmail}</Text>
-                <Text style={paragraph}>📝 <strong>Nachricht:</strong></Text>
+                <Text style={paragraph}><strong>Summary of your message:</strong></Text>
+                <Text style={paragraph}><strong>Email:</strong> {userEmail}</Text>
+                <Text style={paragraph}><strong>Message:</strong></Text>
                 <Text style={messageBox}>{userMessage}</Text>
                 <Section style={btnContainer}>
-                    <Button style={button} href="http://localhost:3000">
-                        Zur Website
+                    <Button style={button} href={process.env.NEXT_PUBLIC_SITE_URL || '#'}>
+                        Visit Website
                     </Button>
                 </Section>
                 <Text style={paragraph}>
-                    Beste Grüße,
+                    Best regards,
                     <br/>
-                    Dein Team von [Dein Name oder Firma]
+                    Michael Kick
                 </Text>
                 <Hr style={hr}/>
-                <Text style={footer}>[Deine Adresse oder Kontaktinformationen]</Text>
+                <Text style={footer}>This is an automated confirmation email.</Text>
             </Container>
         </Body>
     </Html>
 );
 
 ContactConfirmationEmailTemplate.PreviewProps = {
-    userFirstname: 'Max',
-    userEmail: 'max@example.com',
-    userMessage: 'Hallo, ich interessiere mich für eure Dienstleistungen!',
+    userFirstname: 'John',
+    userEmail: 'john@example.com',
+    userMessage: 'Hi, I am interested in working together on a project!',
 } as ContactConfirmationEmailProps;
 
 export default ContactConfirmationEmailTemplate;
