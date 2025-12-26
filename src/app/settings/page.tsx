@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes';
 import Headline from '../_components/Headline';
 
 type ThemeOption = {
-	value: 'system' | 'light' | 'dark' | 'professional';
+	value: 'system' | 'light' | 'dark';
 	label: string;
 	description: string;
 	preview: {
@@ -29,39 +29,29 @@ function Settings() {
 					label: 'System',
 					description: 'Follow your OS light/dark preference.',
 					preview: {
-						primary: '#0f766e',
-						background: 'linear-gradient(90deg, #fff 50%, #000 50%)',
-						text: 'linear-gradient(90deg, #000 50%, #fff 50%)',
+						primary: '#1d4ed8',
+						background: 'linear-gradient(90deg, #f5f7fb 50%, #0b1120 50%)',
+						text: 'linear-gradient(90deg, #0f172a 50%, #e5e7eb 50%)',
 					},
 				},
 				{
 					value: 'light',
 					label: 'Light',
-					description: 'Clean light theme with teal accents.',
+					description: 'Crisp light theme with sapphire accents.',
 					preview: {
-						primary: '#0f766e',
-						background: '#f8fafc',
+						primary: '#1d4ed8',
+						background: '#f5f7fb',
 						text: '#0f172a',
 					},
 				},
 				{
 					value: 'dark',
 					label: 'Dark',
-					description: 'Deep dark theme with teal accents.',
+					description: 'Balanced dark theme with soft blue highlights.',
 					preview: {
-						primary: '#2dd4bf',
-						background: '#0b1220',
-						text: '#e2e8f0',
-					},
-				},
-				{
-					value: 'professional',
-					label: 'Professional',
-					description: 'Classic neutral palette with ink accents.',
-					preview: {
-						primary: '#0f172a',
-						background: '#ffffff',
-						text: '#0f172a',
+						primary: '#60a5fa',
+						background: '#0b1120',
+						text: '#e5e7eb',
 					},
 				},
 			],

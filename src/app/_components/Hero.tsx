@@ -1,56 +1,80 @@
-"use client";
 import React from 'react';
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import CustomizedButton from "./CustomizedButton";
-
+import ButtonLink from "./ButtonLink";
 
 function Hero() {
-
-    const router = useRouter();
-
-    const heroTitle: string = "Hello \nmy name's Michael.";
-
-
-    const contactClicked = () => {
-        router.push("/contact")
-    }
+    const heroFirstName = "Michael";
+    const heroLastName = "Kick";
+    const heroImageSrc = "/images/hero-portrait.svg";
 
     return (
-        <div className="flex flex-wrap ">
-            <div className="flex items-center w-full lg:w-1/2">
-                <div className="max-w-2xl mb-8">
-                    <p>Welcome to my portfolio!</p>
-                    <h1 className="text-5xl font-bold leading-snug tracking-tight text-text lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight whitespace-pre-wrap">
-                        {heroTitle}
-                    </h1>
-                    <div
-                        className="py-5 text-xl leading-normal text-secondary lg:text-xl xl:text-2xl whitespace-pre-line">
-                        I am a Software Engineer from Regensburg.
-                        Currently i am working for TGW as a Java Software Developer.
+        <section className="relative overflow-hidden rounded-2xl border border-border bg-contrast p-8 md:p-12">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-contrast via-contrast to-background opacity-80" />
+            <div className="pointer-events-none absolute -right-20 -top-16 h-56 w-56 rounded-full bg-primary opacity-10 blur-3xl" />
+            <div className="pointer-events-none absolute -left-24 -bottom-24 h-56 w-56 rounded-full bg-primary opacity-10 blur-3xl" />
+            <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-center">
+                <div className="space-y-6">
+                    <p className="text-xs uppercase tracking-[0.2em] text-secondary font-jetbrains">Software Engineer</p>
+                    <div className="space-y-4">
+                        <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+                            {heroFirstName}{' '}
+                            <span className="text-primary">{heroLastName}</span>
+                        </h1>
+                        <p className="text-secondary text-lg leading-relaxed md:text-xl">
+                            I design and build full-stack products that feel calm, clear, and reliable.
+                            Based in Regensburg, I currently work at TGW as a Java Software Developer.
+                        </p>
                     </div>
-                    <div
-                        className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
+                    <div className="flex flex-wrap gap-3 text-sm text-secondary">
+                        <span className="rounded-full border border-border bg-contrastDark px-3 py-1">Full-stack delivery</span>
+                        <span className="rounded-full border border-border bg-contrastDark px-3 py-1">Next.js + TypeScript</span>
+                        <span className="rounded-full border border-border bg-contrastDark px-3 py-1">Java + Spring Boot</span>
+                        <span className="rounded-full border border-border bg-contrastDark px-3 py-1">Product UX polish</span>
                     </div>
-                    <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row" >
-                        <CustomizedButton text="Contact Me" onClick={contactClicked} />
-                        <CustomizedButton text="Download CV" href="/resume"/>
+                    <div className="flex flex-wrap gap-3">
+                        <ButtonLink text="Contact Me" href="/contact" />
+                        <ButtonLink text="Download CV" href="/resume"/>
+                    </div>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="rounded-xl border border-border bg-contrastDark p-4">
+                            <p className="text-xs uppercase tracking-[0.2em] text-secondary font-jetbrains">Based in</p>
+                            <p className="mt-2 text-sm text-secondary">Regensburg, Germany</p>
+                        </div>
+                        <div className="rounded-xl border border-border bg-contrastDark p-4">
+                            <p className="text-xs uppercase tracking-[0.2em] text-secondary font-jetbrains">Current role</p>
+                            <p className="mt-2 text-sm text-secondary">Java Software Developer at TGW</p>
+                        </div>
                     </div>
                 </div>
-
-            </div>
-            <div className="flex items-center justify-center w-full lg:w-1/2">
-                <div>
-                    <Image
-                        src='/images/developer-icon.png'
-                        width="1000"
-                        height="1000"
-                        className={"object-cover"}
-                        alt="Hero Illustration"
-                    />
+                <div className="relative">
+                    <div className="pointer-events-none absolute inset-0 -rotate-2 rounded-3xl border border-border bg-contrastDark" />
+                    <div className="relative overflow-hidden rounded-3xl border border-border bg-contrastDark p-6">
+                        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border bg-contrast">
+                            <Image
+                                src={heroImageSrc}
+                                width={1000}
+                                height={1200}
+                                priority
+                                quality={80}
+                                sizes="(max-width: 1024px) 100vw, 45vw"
+                                className="h-full w-full object-cover"
+                                alt="Portrait or illustration of Michael Kick"
+                            />
+                        </div>
+                        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                            <div className="rounded-xl border border-border bg-contrast p-4">
+                                <p className="text-xs uppercase tracking-[0.2em] text-secondary font-jetbrains">Focus</p>
+                                <p className="mt-2 text-sm text-secondary">Reliable systems and clean UI</p>
+                            </div>
+                            <div className="rounded-xl border border-border bg-contrast p-4">
+                                <p className="text-xs uppercase tracking-[0.2em] text-secondary font-jetbrains">Stack</p>
+                                <p className="mt-2 text-sm text-secondary">TypeScript, React, Java</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -10,21 +10,18 @@ const Navbar = () => {
         {href: "/", label: "Home"},
         {href: "/projects", label: "Projects"},
         {href: "/resume", label: "Resume"},
+        {href: "/blog", label: "Blog"},
         {href: "/about", label: "About"},
         {href: "/settings", label: "Settings"},
     ];
 
     return (
         <div className="bg-background border-b border-border">
-            <nav className="w-full z-50 top-0 px-4 md:px-6 max-w-screen-2xl m-auto text-text flex justify-between items-center h-16 md:h-20">
-                {/* Logo */}
-                <div className="flex text-lg">
-                    <NavLink href="/" label="MyBrand"/>
-                </div>
+            <nav className="w-full z-50 top-0 px-4 md:px-6 max-w-screen-2xl m-auto text-text flex items-center h-16 md:h-20 justify-end md:justify-center">
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden p-2 text-text hover:text-primary transition-colors"
+                    className="md:hidden p-2 text-text"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Toggle menu"
                 >
@@ -40,7 +37,7 @@ const Navbar = () => {
                 </button>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex text-lg">
+                <div className="hidden md:flex text-lg h-full items-stretch">
                     {navLinks.map((link) => (
                         <NavLink
                             key={link.href}
@@ -58,7 +55,7 @@ const Navbar = () => {
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className="py-3 text-text hover:text-primary transition-colors border-b border-border last:border-b-0"
+                                className="py-3 text-text border-b border-border last:border-b-0 hover:text-primary hover:underline hover:decoration-primary hover:underline-offset-4 transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {link.label}

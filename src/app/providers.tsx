@@ -13,7 +13,12 @@ function ThemeMigration() {
 	useEffect(() => {
 		if (!theme) return;
 
-		const allowedThemes = new Set(['system', 'light', 'dark', 'professional']);
+		if (theme === 'professional') {
+			setTheme('light');
+			return;
+		}
+
+		const allowedThemes = new Set(['system', 'light', 'dark']);
 
 		if (!allowedThemes.has(theme)) {
 			setTheme('system');
@@ -30,7 +35,7 @@ export default function Providers({ children }: ProvidersProps) {
 			defaultTheme="system"
 			storageKey="mywebsite-theme"
 			enableSystem
-			themes={['light', 'dark', 'professional']}>
+			themes={['light', 'dark']}>
 			<ThemeMigration />
 			{children}
 		</NextThemesProvider>

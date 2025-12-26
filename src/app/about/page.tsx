@@ -1,19 +1,74 @@
 import React from 'react';
 import BlogLayout from '../_components/BlogLayout';
+import { Metadata } from 'next';
 
-const aboutMeTitle = "About Me";
-const aboutMeParagraphs = [
-    "Hello! I'm Michael, a passionate and driven software developer with a love for turning complex problems into elegant, user-friendly solutions. My journey into the world of technology began at a young age, tinkering with computers and trying to understand how they work. This curiosity quickly evolved into a passion for programming, which led me to pursue a formal education in computer science.",
-    "Throughout my career and academic projects, I've had the opportunity to work with a diverse range of technologies, from backend systems with Java and Spring Boot to dynamic frontend applications with React and Vue.js. I thrive in collaborative environments where I can share ideas with a team and contribute to a shared vision. Whether it's building a cross-platform mobile app or developing an AI-powered chatbot, I am always eager to learn and push the boundaries of what's possible.",
-    "For me, software development is not just a profession; it's a craft. It's about building things that are not only functional and efficient but also intuitive and enjoyable to use. I believe in writing clean, maintainable code and following best practices to create robust and scalable applications.",
-    "When I'm not coding, you can find me exploring the latest tech trends, contributing to open-source projects, or enjoying the outdoors. I am always looking for new challenges and opportunities to grow as a developer and as an individual.",
-    "Thank you for visiting my portfolio. I hope you enjoy looking at my work as much as I enjoyed creating it."
+export const metadata: Metadata = {
+    title: 'About Me',
+    description: 'Learn more about Michael Kick, a passionate software developer specializing in full-stack development, mobile apps, and AI solutions.',
+    openGraph: {
+        title: 'About Me | Michael Kick',
+        description: 'Learn more about Michael Kick, a passionate software developer specializing in full-stack development, mobile apps, and AI solutions.',
+    },
+};
+
+const aboutMeTitle = "About me";
+const aboutMeIntro =
+    "I am Michael Kick, a software engineer in Regensburg focused on building full-stack and mobile products that feel clear, fast, and reliable. My background spans Java and Spring Boot services as well as modern TypeScript and React interfaces.";
+const aboutMeSections = [
+    {
+        title: "What I do",
+        paragraphs: [
+            "I design and build end-to-end features, from backend services and data flows to responsive user interfaces.",
+            "Recent work includes mobile learning UX redesigns, project tracking dashboards, and AI-assisted customer support experiences.",
+        ],
+    },
+    {
+        title: "How I work",
+        paragraphs: [
+            "I start with the user journey, define the smallest valuable slice, and iterate based on feedback.",
+        ],
+        bullets: [
+            "Translate goals into clear flows and interface hierarchy.",
+            "Ship in small increments with measurable outcomes.",
+            "Keep codebases readable with consistent patterns and documentation.",
+        ],
+    },
+    {
+        title: "Now",
+        paragraphs: [
+            "Currently I work as a Java Software Developer at TGW, focusing on reliable services and smooth handoffs with frontend experiences.",
+            "I am also sharpening my TypeScript and Next.js practice to deliver product-focused UI.",
+        ],
+    },
+    {
+        title: "Outside work",
+        paragraphs: [
+            "I enjoy exploring new tools, contributing to open-source ideas, and spending time outdoors to reset.",
+        ],
+    },
+];
+const quickFacts = [
+    { label: "Location", value: "Regensburg, Germany" },
+    { label: "Focus", value: "Full-stack, mobile UX, AI-assisted support" },
+    { label: "Core stack", value: "TypeScript, React/Next.js, Java, Spring Boot" },
+    { label: "Currently", value: "Java Software Developer at TGW" },
+];
+const aboutCta = [
+    { text: "Contact me", href: "/contact" },
+    { text: "View resume", href: "/resume" },
+    { text: "See projects", href: "/projects" },
 ];
 
 const About = () => {
     return (
-        <div>
-            <BlogLayout blogTitle={aboutMeTitle} paragraphs={aboutMeParagraphs}/>
+        <div className="w-full">
+            <BlogLayout
+                blogTitle={aboutMeTitle}
+                intro={aboutMeIntro}
+                sections={aboutMeSections}
+                quickFacts={quickFacts}
+                cta={aboutCta}
+            />
         </div>
     );
 };

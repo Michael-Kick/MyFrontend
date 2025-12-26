@@ -12,9 +12,9 @@ interface ResumeElementProps {
 
 export const ResumeElement = (props: ResumeElementProps) => {
     return (
-        <div className="mb-32">
-            <h1 className='font-bold text-8xl mb-16 w-full pl-[28%]'>{props.heading}</h1>
-            <div className="w-[75%] mx-auto relative">
+        <div className="mb-16 md:mb-32">
+            <h1 className='font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-16 w-full text-center md:text-left md:pl-[15%]'>{props.heading}</h1>
+            <div className="w-full md:w-[90%] lg:w-[80%] mx-auto relative">
                 <div className="absolute left-9 top-1 w-[4px] h-full bg-border origin-top"/>
                 {props.workElement &&
                     <ul className="w-full flex flex-col items-start justify-between ml-4">

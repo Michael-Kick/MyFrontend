@@ -8,7 +8,10 @@ interface NavLinkProps {
 
 function NavLink({ href, label }: NavLinkProps) {
     return (
-        <Link href={href} className="flex items-center justify-center px-6 text-text transition-colors hover:bg-contrastDark hover:text-primary">
+        <Link
+            href={href}
+            prefetch={false}
+            className="flex h-full items-center justify-center border-b border-transparent px-6 text-text transition-colors hover:border-primary hover:text-primary">
             {label}
         </Link>
     );

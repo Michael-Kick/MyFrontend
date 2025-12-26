@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import {FaJava, FaPython, FaReact, FaVuejs} from "react-icons/fa";
 import {TbBrandCSharp, TbBrandXamarin} from "react-icons/tb";
