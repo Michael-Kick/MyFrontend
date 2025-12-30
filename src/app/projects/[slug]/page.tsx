@@ -8,13 +8,14 @@ import { projects } from "../../_utils/projectData";
 import { Metadata } from "next";
 
 interface ProjectPageProps {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 }
 
-export function generateMetadata({ params }: ProjectPageProps): Metadata {
-    const project = projects.find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const project = projects.find((item) => item.slug === slug);
 
     if (!project) {
         return {
@@ -32,8 +33,9 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     };
 }
 
-const ProjectPage = ({ params }: ProjectPageProps) => {
-    const project = projects.find((item) => item.slug === params.slug);
+const ProjectPage = async ({ params }: ProjectPageProps) => {
+    const { slug } = await params;
+    const project = projects.find((item) => item.slug === slug);
 
     if (!project) {
         notFound();

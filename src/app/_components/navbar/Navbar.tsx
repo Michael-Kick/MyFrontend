@@ -10,7 +10,6 @@ const Navbar = () => {
         {href: "/", label: "Home"},
         {href: "/projects", label: "Projects"},
         {href: "/resume", label: "Resume"},
-        {href: "/blog", label: "Blog"},
         {href: "/about", label: "About"},
         {href: "/settings", label: "Settings"},
     ];
