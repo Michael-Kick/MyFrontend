@@ -7,6 +7,8 @@ interface ContactConfirmationEmailProps {
     userMessage: string;
 }
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://your-domain.com';
+
 export const ContactConfirmationEmailTemplate = ({
                                                      userFirstname,
                                                      userEmail,
@@ -27,7 +29,7 @@ export const ContactConfirmationEmailTemplate = ({
                 <Text style={paragraph}><strong>Message:</strong></Text>
                 <Text style={messageBox}>{userMessage}</Text>
                 <Section style={btnContainer}>
-                    <Button style={button} href={process.env.NEXT_PUBLIC_SITE_URL || '#'}>
+                    <Button style={button} href={siteUrl}>
                         Visit Website
                     </Button>
                 </Section>

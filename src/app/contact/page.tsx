@@ -1,5 +1,6 @@
 "use client";
-import React, {useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
 import CustomizedInput from "../_components/CustomizedInput";
 import CustomizedButton from '../_components/CustomizedButton';
 
@@ -18,6 +19,26 @@ interface InputField {
     colSpan?: 'full' | 'half';
 }
 
+type TurnstileRenderOptions = {
+    sitekey: string;
+    theme?: 'auto' | 'light' | 'dark';
+    callback?: (token: string) => void;
+    'expired-callback'?: () => void;
+    'error-callback'?: () => void;
+};
+
+type TurnstileWidget = {
+    render: (container: string | HTMLElement, options: TurnstileRenderOptions) => string;
+    remove: (widgetId: string) => void;
+    reset: (widgetId: string) => void;
+};
+
+declare global {
+    interface Window {
+        turnstile?: TurnstileWidget;
+    }
+}
+
 const Contact = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -30,9 +51,63 @@ const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
+    const [honeypot, setHoneypot] = useState('');
+    const [turnstileToken, setTurnstileToken] = useState('');
+    const [turnstileError, setTurnstileError] = useState('');
+    const [turnstileReady, setTurnstileReady] = useState(false);
+    const turnstileWidgetIdRef = useRef<string | null>(null);
+    const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '';
+    const hasTurnstileConfig = Boolean(turnstileSiteKey);
+    const turnstileBypass = process.env.NEXT_PUBLIC_TURNSTILE_BYPASS === 'true';
+    const turnstileEnabled = hasTurnstileConfig && !turnstileBypass;
+
+    useEffect(() => {
+        if (!turnstileReady || !turnstileEnabled || !window.turnstile || turnstileWidgetIdRef.current) {
+            return;
+        }
+
+        const container = document.getElementById('turnstile-container');
+        if (!container) {
+            return;
+        }
+
+        const widgetId = window.turnstile.render(container, {
+            sitekey: turnstileSiteKey,
+            theme: 'auto',
+            callback: (token: string) => {
+                setTurnstileToken(token);
+                setTurnstileError('');
+            },
+            'expired-callback': () => {
+                setTurnstileToken('');
+                setTurnstileError('Verification expired. Please try again.');
+            },
+            'error-callback': () => {
+                setTurnstileToken('');
+                setTurnstileError('Verification failed. Please try again.');
+            },
+        });
+
+        turnstileWidgetIdRef.current = widgetId;
+
+        return () => {
+            window.turnstile?.remove(widgetId);
+            if (turnstileWidgetIdRef.current === widgetId) {
+                turnstileWidgetIdRef.current = null;
+            }
+        };
+    }, [turnstileReady, turnstileEnabled, turnstileSiteKey]);
+
+    const resetTurnstile = () => {
+        if (turnstileWidgetIdRef.current && window.turnstile) {
+            window.turnstile.reset(turnstileWidgetIdRef.current);
+        }
+        setTurnstileToken('');
+    };
 
     async function submitClicked() {
         let newErrors: { [key: string]: string } = {};
+        setTurnstileError('');
 
         // Validation
         if (!firstName) newErrors.firstName = "First Name is required.";
@@ -53,6 +128,16 @@ const Contact = () => {
             return;
         }
 
+        if (!turnstileBypass && !hasTurnstileConfig) {
+            setTurnstileError('Bot protection is not configured. Please set NEXT_PUBLIC_TURNSTILE_SITE_KEY.');
+            return;
+        }
+
+        if (!turnstileBypass && !turnstileToken) {
+            setTurnstileError('Please complete the verification.');
+            return;
+        }
+
         setErrors({}); // Clear errors if validation passes
         setIsSubmitting(true);
         setSubmitStatus('idle');
@@ -70,10 +155,12 @@ const Contact = () => {
                     subject: topic,
                     phone: phoneNumber,
                     company: company,
+                    honeypot: honeypot,
+                    turnstileToken: turnstileToken,
                 })
             });
 
-            const data = await response.json();
+            const data = await response.json().catch(() => null) as { error?: string; message?: string } | null;
 
             if (response.ok) {
                 setSubmitStatus('success');
@@ -85,15 +172,19 @@ const Contact = () => {
                 setEmail('');
                 setMessage('');
                 setTopic('');
+                setHoneypot('');
             } else {
                 setSubmitStatus('error');
-                setErrorMessage(data.message || 'Failed to send message. Please try again.');
+                setErrorMessage(data?.error || data?.message || 'Failed to send message. Please try again.');
             }
         } catch (error) {
             setSubmitStatus('error');
             setErrorMessage('Network error. Please check your connection and try again.');
         } finally {
             setIsSubmitting(false);
+            if (turnstileEnabled) {
+                resetTurnstile();
+            }
         }
     }
 
@@ -161,6 +252,14 @@ const Contact = () => {
 
     return (
         <div className="w-full space-y-12">
+            {turnstileEnabled ? (
+                <Script
+                    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+                    async
+                    defer
+                    onLoad={() => setTurnstileReady(true)}
+                />
+            ) : null}
             <section className="relative overflow-hidden rounded-2xl border border-border bg-contrast p-8 md:p-12">
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-contrast via-contrast to-background opacity-80" />
                 <div className="pointer-events-none absolute -right-24 -top-16 h-56 w-56 rounded-full bg-primary opacity-10 blur-3xl" />
@@ -206,6 +305,18 @@ const Contact = () => {
                         )}
 
                         <div className="grid gap-4 md:grid-cols-2">
+                            <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                                <label htmlFor="website">Website</label>
+                                <input
+                                    id="website"
+                                    name="website"
+                                    type="text"
+                                    value={honeypot}
+                                    onChange={(event) => setHoneypot(event.target.value)}
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                />
+                            </div>
                             {inputFields.map((input) => (
                                 <div
                                     key={input.id}
@@ -235,6 +346,17 @@ const Contact = () => {
                                 />
                                 {errors.message && <p className="mt-1 text-danger text-sm">{errors.message}</p>}
                             </div>
+                            <div className="md:col-span-2 space-y-2">
+                                <p className="text-sm text-secondary">Verification</p>
+                                {turnstileEnabled ? (
+                                    <div id="turnstile-container" className="min-h-[65px]" />
+                                ) : (
+                                    <p className={`text-sm ${turnstileBypass ? 'text-secondary' : 'text-danger'}`}>
+                                        {turnstileBypass ? 'Verification is disabled for local testing.' : 'Bot protection is not configured.'}
+                                    </p>
+                                )}
+                                {turnstileError && <p className="mt-1 text-danger text-sm">{turnstileError}</p>}
+                            </div>
                         </div>
 
                         <div className="flex flex-wrap items-center justify-between gap-4">
@@ -244,7 +366,7 @@ const Contact = () => {
                             <CustomizedButton
                                 text={isSubmitting ? 'Sending...' : 'Submit'}
                                 onClick={submitClicked}
-                                disabled={isSubmitting}
+                                disabled={isSubmitting || (!turnstileBypass && !hasTurnstileConfig)}
                             />
                         </div>
                     </div>
