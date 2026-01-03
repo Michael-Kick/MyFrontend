@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SkillTag from "../../_components/projects/SkillTag";
@@ -54,64 +53,59 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
 
             <section className="relative overflow-hidden rounded-2xl border border-border bg-contrast p-8 md:p-12">
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-contrast via-contrast to-background opacity-80"/>
-                <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                    <div className="space-y-4">
-                        <span className="inline-flex w-fit items-center rounded-full border border-border bg-contrastDark px-3 py-1 text-xs uppercase tracking-[0.2em] text-secondary font-jetbrains">
-                            {project.activity}
-                        </span>
-                        <h1 className="text-4xl font-bold md:text-5xl">{project.projectName}</h1>
-                        <p className="text-secondary">{project.companyName}</p>
-                        <p className="max-w-2xl text-secondary leading-relaxed">{project.description}</p>
-                    </div>
-                    <div className="flex items-center justify-center rounded-xl border border-border bg-contrastDark p-4">
-                        <Image
-                            src={project.imgUrl}
-                            alt={`${project.companyName} logo`}
-                            width={180}
-                            height={90}
-                            quality={80}
-                            sizes="(max-width: 1024px) 160px, 180px"
-                            className="h-16 w-auto object-contain"
-                        />
-                    </div>
+                <div className="relative space-y-4">
+                    <span className="inline-flex w-fit items-center rounded-full border border-border bg-contrastDark px-3 py-1 text-xs uppercase tracking-[0.2em] text-secondary font-jetbrains">
+                        {project.activity}
+                    </span>
+                    <h1 className="text-4xl font-bold md:text-5xl">{project.projectName}</h1>
+                    <p className="text-secondary">{project.companyName}</p>
+                    <p className="max-w-2xl text-secondary leading-relaxed">{project.description}</p>
                 </div>
                 <div className="relative mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm text-secondary">
                     <div className="flex items-center gap-2">
                         <span className="font-semibold text-text">Year</span>
                         <span>{project.year}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <span className="font-semibold text-text">Role</span>
-                        <span>{project.role}</span>
-                    </div>
+                    {project.role && (
+                        <div className="flex items-center gap-2">
+                            <span className="font-semibold text-text">Role</span>
+                            <span>{project.role}</span>
+                        </div>
+                    )}
                     <div className="flex items-center gap-2">
                         <span className="font-semibold text-text">Focus</span>
                         <span>{project.activity}</span>
                     </div>
                 </div>
-                <div className="relative mt-6 rounded-lg border border-border bg-contrastDark px-4 py-4 text-sm text-secondary">
-                    <span className="font-semibold text-text">Impact:</span> {project.impact}
-                </div>
+                {project.impact && (
+                    <div className="relative mt-6 rounded-lg border border-border bg-contrastDark px-4 py-4 text-sm text-secondary">
+                        <span className="font-semibold text-text">Impact:</span> {project.impact}
+                    </div>
+                )}
             </section>
 
             <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
                 <div className="space-y-8">
-                    <div>
-                        <h2 className="text-2xl font-semibold">Highlights</h2>
-                        <ul className="mt-3 space-y-2 list-disc list-inside text-secondary">
-                            {project.highlights.map((item) => (
-                                <li key={item}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 className="text-2xl font-semibold">Tools and skills</h2>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                            {project.projectSkills.map((skillNum: number, index) => (
-                                <SkillTag skillKey={skillNum} key={index} />
-                            ))}
+                    {project.highlights.length > 0 && (
+                        <div>
+                            <h2 className="text-2xl font-semibold">Highlights</h2>
+                            <ul className="mt-3 space-y-2 list-disc list-inside text-secondary">
+                                {project.highlights.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                            </ul>
                         </div>
-                    </div>
+                    )}
+                    {project.projectSkills.length > 0 && (
+                        <div>
+                            <h2 className="text-2xl font-semibold">Tools and skills</h2>
+                            <div className="mt-3 flex flex-wrap gap-2">
+                                {project.projectSkills.map((skillNum: number, index) => (
+                                    <SkillTag skillKey={skillNum} key={index} />
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <aside className="h-fit rounded-xl border border-border bg-contrastDark p-6">
                     <p className="text-xs uppercase tracking-[0.2em] text-secondary font-jetbrains">Project facts</p>
@@ -120,10 +114,12 @@ const ProjectPage = async ({ params }: ProjectPageProps) => {
                             <dt className="font-semibold text-text">Company</dt>
                             <dd>{project.companyName}</dd>
                         </div>
-                        <div>
-                            <dt className="font-semibold text-text">Role</dt>
-                            <dd>{project.role}</dd>
-                        </div>
+                        {project.role && (
+                            <div>
+                                <dt className="font-semibold text-text">Role</dt>
+                                <dd>{project.role}</dd>
+                            </div>
+                        )}
                         <div>
                             <dt className="font-semibold text-text">Year</dt>
                             <dd>{project.year}</dd>

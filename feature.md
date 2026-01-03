@@ -2,6 +2,38 @@
 
 Last updated: 2026-01-03
 
+## COMPLETED - Layout Optimization for Large Screens
+
+**Completed:** 2026-01-03
+
+### Changes Made
+- **Font sizing:** Reduced base from 20px to 18px (10% reduction) for better content density on 1920x1080 displays
+  - Base: 20px → 18px
+  - Large: 25px → 22px
+  - XL: 30px → 26px
+- **Layout constraints:** Added max-w-screen-2xl (1536px) to main layout for consistent content width
+- **Padding optimization:** Reduced from lg:px-32 to lg:px-16, added 2xl:px-24 for large screens
+- **Resume headings:** Capped at text-5xl (was text-6xl) to prevent oversized headings
+
+### Design System
+- **Breakpoints:** sm (640px), md (768px), lg (1024px), xl (1280px), 2xl (1536px)
+- **Max-width:** 1536px for main content (matches navbar)
+- **Padding scale:** 16px (mobile) → 32px (sm) → 64px (md/lg) → 96px (2xl)
+- **Target optimization:** 1920x1080 displays (most common desktop resolution)
+
+### Rationale
+- Balances readability with information density
+- Maintains responsive design from mobile to 4K
+- Preserves existing design aesthetic and theme system
+- Optimizes for the most common desktop resolution (1920x1080)
+
+### Files Modified
+- `tailwind.config.js` - Updated base font sizes
+- `src/app/layout.tsx` - Added max-width constraint and optimized padding
+- `src/app/_components/ResumeElement.tsx` - Capped heading sizes and added max-width
+
+---
+
 ## P1 - High Priority
 - SEO basics: add `public/robots.txt`, `public/sitemap.xml` (or generator), canonical URLs, structured data, and the missing OG image referenced in metadata.
 - Resume performance: lazy-load `@react-pdf/renderer` or switch to a static PDF download.

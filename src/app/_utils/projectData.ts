@@ -11,6 +11,7 @@ export type Project = {
     impact: string;
     highlights: string[];
     featured?: boolean;
+    type?: 'professional' | 'guide';
 };
 
 export const projects: Project[] = [
@@ -92,9 +93,14 @@ export const projects: Project[] = [
         description: 'Secure remote access with WireGuard, static IPs, dynamic DNS, and router forwarding.',
         projectSkills: [],
         year: '2024',
-        role: '',
-        impact: '',
-        highlights: [],
+        role: 'Author',
+        impact: 'Simplified VPN setup for secure remote access to home network resources.',
+        highlights: [
+            'Step-by-step WireGuard configuration for optimal security.',
+            'Dynamic DNS integration for consistent access.',
+            'Router port forwarding best practices.',
+        ],
+        type: 'guide',
     },
     {
         slug: 'nextcloud-guide',
@@ -105,8 +111,13 @@ export const projects: Project[] = [
         description: 'Self-hosted cloud storage using Docker and an external SSD for Nextcloud data.',
         projectSkills: [],
         year: '2024',
-        role: '',
-        impact: '',
-        highlights: [],
+        role: 'Author',
+        impact: 'Enabled private cloud storage with full data ownership and control.',
+        highlights: [
+            'Docker-based deployment for easy maintenance and updates.',
+            'External SSD configuration for expandable storage.',
+            'Security hardening and backup strategies.',
+        ],
+        type: 'guide',
     },
 ];

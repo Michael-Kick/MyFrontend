@@ -9,9 +9,9 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        base: '20px', // Default font size
-        lg: '25px',
-        xl: '30px',
+        base: '18px', // Optimized for 1920x1080 displays (reduced from 20px)
+        lg: '22px',   // Proportionally reduced from 25px
+        xl: '26px',   // Proportionally reduced from 30px
       },
       fontFamily: {
         jetbrains: ['JetBrains Mono', 'monospace'],
